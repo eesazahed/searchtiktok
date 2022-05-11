@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TikTok Hashtags | View Search Results</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+      }
+
+      video,
+      a {
+        padding: 1%;
+        margin: 1%;
+        border-radius: 20px;
+      }
+
+      .videos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <a href="/">Back To Search</a>
+    <br />
+    <h1>Top TikToks with the hashtag "<%= request %>"</h1>
+
+    <div class="videos">
+      <% for (let i = 0; i < videos.length; i++) { %>
+      <a target="_blank" referrerpolicy="no-referrer" href="<%= links[i] %>">
+        <video width="240" controls>
+          <source src="<%= videos[i] %>" />
+        </video>
+      </a>
+      <% } %>
+    </div>
+    <br />
+    <h3>Designed by Eesa Z. and Taha H.</h3>
+  </body>
+</html>
